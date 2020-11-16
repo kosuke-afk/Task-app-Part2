@@ -4,6 +4,8 @@
 
 ## 開発環境
 
+初めてのgit
+
 * AWS Cloud9
 * Ruby
 * Git
