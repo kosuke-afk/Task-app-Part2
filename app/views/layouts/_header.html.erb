@@ -1,13 +1,13 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top navbar-inverse header">
   <div class="container">
-    <%= link_to "Sample App", root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Top", root_path %></li>
+    <%= link_to "Task App", root_path, id: "logo" %>
+    <nav class="nav">
+      <ul class="nav navbar-nav navbar-right list-home">
+        <li class="list"><%= link_to "Top", root_path, class: "list-item" %></li>
         <% if logged_in? %>
-          <li><%= link_to "Users", '#' %></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <li class="list"><%= link_to "Users", '#', class: "list-item" %></li>
+          <li class="dropdown list">
+            <a href="#" class="dropdown-toggle list-item" data-toggle="dropdown" id="dropdown-title">
               Account <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
@@ -18,7 +18,7 @@
             </ul>
           </li>
         <% else %>
-          <li><%= link_to "Log in", login_path %></li>
+          <li class="list"><%= link_to "Log in", login_path,class: "list-item" %></li>
         <% end %>
       </ul>
     </nav>

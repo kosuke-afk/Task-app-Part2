@@ -50,22 +50,46 @@ p {
   line-height: 1.7em;
 }
 
+
+
+
 /* ヘッダー */
 
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
+  font-style: italic;
   color: #fff;
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
 }
 
 #logo:hover {
-  color: #fff;
+  color: gray;
   text-decoration: none;
+}
+
+#dropdown-title {
+  background-color: teal;
+}
+
+
+.header {
+  background-color: teal;
+}
+
+
+.list-home  .list  .list-item {
+  color: white;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.list-home .list .list-item:hover {
+  color: gray;
 }
 
 /* デバッグウインドウ */
