@@ -1,0 +1,26 @@
+<% provide(:title, "Users") %>
+<h1>利用者一覧</h1>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <table class="table table-condensed table-hover">
+      <thead>
+        <tr>
+          <tH><%= User.human_attribute_name :name %></tH>
+        </tr>
+      </thead>
+      <% @users.each do |user| %>
+        <tr>
+          <td>
+            <%= link_to user.name, user_path(user) %>
+            <% if user.admin? %>
+              <span class="label label-primary label-user-division">管理者</span>
+            <% else %>
+              <span class="label label-success label-user-division">一般</span>
+            <% end %>
+          </td>
+          <td><%= link_to "削除","#",class: "btn btn-danger btn-sm pull-right" %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
