@@ -38,6 +38,13 @@ class TasksController < ApplicationController
     end
   end
   
+  def destroy
+    @task = @user.tasks.find_by(id: params[:id])
+    @task.destroy
+    flash[:success] = "#{@task.name}のデータを削除しました。"
+    redirect_to user_tasks_url(@user)
+  end
+  
   private
     
     def set_user #タスクに関するページでは全てどのユーザーのタスクかを判定するのにUserのデーターが不可欠
