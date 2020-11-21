@@ -35,6 +35,10 @@ module SessionsHelper
     end
   end
   
+  def current_user?(user)
+    user == current_user
+  end
+  
   def logged_in?
     !current_user.nil? #現在ログイン中のユーザーは空ではないですか？
   end
