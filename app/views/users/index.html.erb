@@ -19,7 +19,9 @@
               <span class="label label-success label-user-division">一般</span>
             <% end %>
           </td>
-          <td><%= link_to "削除",user_path(user),class: "btn btn-danger btn-sm pull-right", method: :delete %></td>
+          <td><%= link_to "削除",user_path(user),class: "btn btn-danger btn-sm pull-right", method: :delete,
+               data: { confirm: "「#{user.name}」を削除します。よろしいですか？" } %>
+          </td>
         </tr>
       <% end %>
     </table>

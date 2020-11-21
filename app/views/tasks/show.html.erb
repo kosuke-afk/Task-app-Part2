@@ -14,7 +14,9 @@
         </tr>
         <tr>
           <th class="active head">詳細</th>
-          <td><%= @task.description %></td>
+          <td>
+            <%= auto_link(safe_join(@task.description.split("\n"), tag(:br))) %>
+          </td>
         </tr>
         <tr>
           <th class="active head">作成日</th>

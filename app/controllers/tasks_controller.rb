@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   before_action :correct_user
   
   def index
-    @tasks = @user.tasks
+    @tasks = @user.tasks.order(id: "DESC")
   end
   
   def show
@@ -34,7 +34,7 @@ class TasksController < ApplicationController
     @task = @user.tasks.find(params[:id]) #更新するタスクオブジェクトを@taskに代入
     if @task.update_attributes(params_task) #StrongParameterの値を受け取り更新
       flash[:success] = "タスクを更新しました。"
-      redirect_to user_tasks_url(@user) #変更したタスク詳細ページへリダイレクト
+      redirect_to user_task_url(@user,@task) #変更したタスク詳細ページへリダイレクト
     else
       render :edit
     end
